@@ -1,0 +1,60 @@
+header {
+  background-color: #7fdfff;
+  color: white;
+  font-size: 18px;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.logo {
+  font-size: 36px;
+  margin: 7px 0 5px 20px;
+  font-family: Cookie, cursive;
+}
+
+.fa-bars {
+  font-size: 150%;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.title-create {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.title-form {
+  width: 250px;
+  background-color: #d17196;
+  border: none;
+  height: 40px;
+  border-radius: 25px;
+  margin: 0 auto;
+  text-align: center;
+  padding-right: 20px;
+  color: white;
+}
+
+.center-justify {
+  justify-content: center;
+}
+
+.title-form::placeholder {
+  color: white;
+}
+
+.title-submit-button {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  color: #7fdfff;
+}
+
+.title-submit {
+  position: relative;
+}
