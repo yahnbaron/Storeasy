@@ -1,18 +1,24 @@
 import React from 'react';
 
-export default function NavBar(props) {
-  return (
-    <header>
-      <div className="container">
-        <div className="row align-center">
-          <div className="column-auto">
-            <i className="fa-solid fa-bars" />
-          </div>
-          <div className="column-auto logo">
-            <p>Storeasy</p>
+class NavBar extends React.Component {
+  render() {
+    return (
+      <header>
+        <div className="container">
+          <div className="row align-center">
+            <div className="column-auto">
+              <a className="hamburger" >
+                <i className="fa-solid fa-bars" />
+              </a>
+            </div>
+            <div className="column-auto logo">
+              <p>Storeasy</p>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
-  );
+      </header>
+    );
+  }
 }
+
+export default NavBar;
