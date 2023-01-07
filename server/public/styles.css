@@ -1,0 +1,129 @@
+header {
+  background-color: #7fdfff;
+  color: white;
+  font-size: 18px;
+}
+
+body {
+  background-color: #f5fcff;
+}
+
+.logo {
+  font-size: 36px;
+  margin: 7px 0 5px 20px;
+  font-family: Cookie, cursive;
+}
+
+.fa-bars {
+  font-size: 175%;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.title-create {
+  font-family: "Josefin Sans", sans-serif;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.title-form {
+  width: 250px;
+  background-color: #d17196;
+  border: none;
+  height: 40px;
+  border-radius: 25px;
+  margin: 0 auto;
+  text-align: center;
+  padding-right: 20px;
+  color: white;
+}
+
+.center-justify {
+  justify-content: center;
+}
+
+.title-form::placeholder {
+  color: white;
+}
+
+.title-submit-button {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  color: #7fdfff;
+  cursor: pointer;
+  font-size: 1.5em;
+  transition: color 0.2s ease-in-out;
+  background-color: transparent;
+  border: none;
+}
+
+.title-submit-button:hover {
+  color: rgb(0, 175, 234);
+}
+
+.title-submit {
+  position: relative;
+}
+
+.title-submit > input:focus {
+  outline-color: #7fdfff;
+}
+
+.hamburger {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.hamburger:hover {
+  color: #d17196;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  visibility: hidden;
+}
+
+.overlay.visible {
+  visibility: visible;
+}
+
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  color: white;
+  background-color: #d17196;
+  z-index: 2;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.menu-drawer.open {
+  transform: translateX(0);
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.menu > a {
+  display: block;
+  padding: 4px 0;
+}
+
+.menu > a:hover {
+  text-decoration: underline;
+}
