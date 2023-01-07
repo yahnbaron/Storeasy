@@ -10,7 +10,14 @@
 
 .row {
   display: flex;
-  flex-wrap: wrap;
+}
+
+.column-20 {
+  flex-basis: 20%;
+}
+
+.column-80 {
+  flex-basis: 80%;
 }
 
 .column-full {

@@ -16,7 +16,6 @@ body {
 
 .fa-bars {
   font-size: 175%;
-  padding-top: px;
 }
 
 .align-center {
@@ -53,7 +52,7 @@ body {
 .title-submit-button {
   position: absolute;
   right: 5px;
-  top: 7px;
+  top: 6px;
   color: #7fdfff;
   cursor: pointer;
   font-size: 1.5em;
@@ -70,6 +69,10 @@ body {
   position: relative;
 }
 
+.title-submit > input:focus {
+  outline-color: #7fdfff;
+}
+
 .hamburger {
   cursor: pointer;
   transition: color 0.2s ease-in-out;
@@ -77,4 +80,50 @@ body {
 
 .hamburger:hover {
   color: #d17196;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  visibility: hidden;
+}
+
+.overlay.visible {
+  visibility: visible;
+}
+
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  color: white;
+  background-color: #d17196;
+  z-index: 2;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.menu-drawer.open {
+  transform: translateX(0);
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.menu > a {
+  display: block;
+  padding: 4px 0;
+}
+
+.menu > a:hover {
+  text-decoration: underline;
 }
