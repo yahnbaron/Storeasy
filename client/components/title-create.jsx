@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState, useHistory } from 'react-router-dom';
+import { React, useState } from 'react';
+import useHistory from 'react-router-dom';
 
 function TitleCreate(props) {
   const [title, setTitle] = useState('');
