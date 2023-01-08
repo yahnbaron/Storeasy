@@ -1,41 +1,45 @@
-import { React, useState } from 'react';
-import useHistory from 'react-router-dom';
+import React from 'react';
 
-function TitleCreate(props) {
-  const [title, setTitle] = useState('');
-  const history = useHistory();
+class TitleCreate extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = { inputValue: '' };
+  }
 
-  const handleSubmit = event => {
+  handleSubmit(event) {
     event.preventDefault();
-    history.push(`/compose/${title}`);
-  };
+    console.error('State: ', this.state);
+  }
 
-  return (
-    <div className='title-create-component'>
-      <div className='container'>
-        <div className='row center-justify'>
-          <div className='col-auto'>
-            <h3>It all starts with a title:</h3>
+  render() {
+    return (
+      <div className='title-create-component'>
+        <div className='container'>
+          <div className='row center-justify'>
+            <div className='col-auto'>
+              <h3>It all starts with a title:</h3>
+            </div>
           </div>
-        </div>
-        <div className='row'>
-          <div className='col-auto relative'>
-            <form className='title-submit' onSubmit={handleSubmit}>
-              <input
-                placeholder='Enter a title for your new story...'
-                className='title-form'
-                value={title}
-                onChange={event => setTitle(event.target.value)}
-              />
-              <button type='submit' className='title-submit-button'>
-                <i className='fa-solid fa-circle-right' />
-              </button>
-            </form>
+          <div className='row'>
+            <div className='col-auto'>
+              <form className='title-submit' onSubmit={event => this.handleSubmit(event)}>
+                <input
+                  placeholder='Enter a title for your new story...'
+                  className='title-form'
+                  value={this.state.inputValue}
+                  onChange={event => this.setState({ inputValue: event.target.value })}
+                />
+                <button type='submit' className='title-submit-button'>
+                  <i className='fa-solid fa-circle-right' />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default TitleCreate;
