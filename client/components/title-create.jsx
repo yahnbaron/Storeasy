@@ -14,7 +14,7 @@ class TitleCreate extends React.Component {
 
   render() {
     return (
-      <div className='title-create-component'>
+      <div className='title-create'>
         <div className='container'>
           <div className='row center-justify'>
             <div className='col-auto'>

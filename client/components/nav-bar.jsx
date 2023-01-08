@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -34,7 +33,7 @@ class NavBar extends React.Component {
                 </a>
               </div>
               <div className="column-auto logo">
-                <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>Storeasy</Link>
+                <a onClick={this.toggleMenu}>Storeasy</a>
               </div>
             </div>
           </div>
