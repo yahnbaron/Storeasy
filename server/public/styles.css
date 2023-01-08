@@ -59,6 +59,8 @@ body {
   transition: color 0.2s ease-in-out;
   background-color: transparent;
   border: none;
+  width: 30px;
+  height: 30px;
 }
 
 .title-submit-button:hover {
@@ -113,6 +115,15 @@ body {
 
 .menu-drawer.open {
   transform: translateX(0);
+}
+
+a {
+  text-decoration: none;
+  color: #f5fcff;
+}
+
+a:visited {
+  color: #f5fcff;
 }
 
 a:hover {
