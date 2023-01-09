@@ -33,7 +33,7 @@ class NavBar extends React.Component {
                 </a>
               </div>
               <div className="column-auto logo">
-                <a onClick={this.toggleMenu}>Storeasy</a>
+                <a className='logo-text' href='#'>Storeasy</a>
               </div>
             </div>
           </div>
@@ -43,9 +43,8 @@ class NavBar extends React.Component {
             <div className='row'>
               <div className='column-20 menu'>
                 <h2>Menu</h2>
-                <a onClick={this.closeMenu}>Home</a>
-                <a onClick={this.closeMenu}>Library</a>
-                <a onClick={this.closeMenu}>About</a>
+                <a href='#' onClick={this.closeMenu}>Home</a>
+                <a href='#library' onClick={this.closeMenu}>Library</a>
               </div>
             </div>
           </div>
