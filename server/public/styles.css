@@ -24,7 +24,7 @@ body {
 
 .title-create {
   font-family: "Josefin Sans", sans-serif;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   align-items: center;
 }
@@ -137,4 +137,43 @@ a:hover {
 
 .menu > a:hover {
   text-decoration: underline;
+}
+
+textarea {
+  width: 99%;
+  margin-bottom: 20px;
+  border-color: #7fdfff;
+  border-radius: 5px;
+}
+
+.prompt-create {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+}
+
+#prompt-input {
+  margin-bottom: 40px;
+}
+
+.story-title {
+  font-family: "Josefin Sans", sans-serif;
+  margin-left: 20px;
+  text-decoration: underline;
+}
+
+.prompt-submit {
+  text-align: right;
+}
+
+.prompt-submit-button {
+  border: none;
+  background-color: #d17196;
+  color: white;
+  height: 30px;
+  width: 75px;
+  border-radius: 4px;
+  font-weight: lighter;
 }
