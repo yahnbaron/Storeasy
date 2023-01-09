@@ -5,7 +5,9 @@ export default function Library(props) {
   return (
     <div>
       <NavBar />
-      <h2>Welcome to The Fucking Library</h2>
+      <div className='container'>
+        <h2>Welcome to The Fucking Library</h2>
+      </div>
     </div>
   );
 }

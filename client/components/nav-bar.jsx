@@ -33,7 +33,7 @@ class NavBar extends React.Component {
                 </a>
               </div>
               <div className="column-auto logo">
-                <a href='#'>Storeasy</a>
+                <a className='logo-text' href='#'>Storeasy</a>
               </div>
             </div>
           </div>

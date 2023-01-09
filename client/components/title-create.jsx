@@ -28,6 +28,7 @@ class TitleCreate extends React.Component {
                 <input
                   placeholder='Enter a title for your new story...'
                   className='title-form'
+                  required
                   name='title'
                   value={this.state.inputValue}
                   onChange={event => this.setState({ inputValue: event.target.value })}

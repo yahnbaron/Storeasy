@@ -14,6 +14,11 @@ body {
   font-family: Cookie, cursive;
 }
 
+.logo-text:hover {
+  color: #d17196;
+  transition: color 0.2s ease-in-out;
+}
+
 .fa-bars {
   font-size: 175%;
 }
@@ -171,6 +176,31 @@ textarea {
 .prompt-submit-button {
   border: none;
   background-color: #d17196;
+  color: white;
+  height: 30px;
+  width: 75px;
+  border-radius: 4px;
+  font-weight: lighter;
+}
+
+textarea:focus {
+  outline-color: #d17196;
+}
+
+.full-story {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.prompt-submit-button:hover {
+  cursor: pointer;
+}
+
+.prompt-submit-button-disabled {
+  border: none;
+  background-color: #7fdfff;
   color: white;
   height: 30px;
   width: 75px;
