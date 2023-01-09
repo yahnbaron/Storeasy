@@ -21,9 +21,9 @@ export default class Prompt extends React.Component {
     const styleValue = this.state.styleValue;
     let stringForAI = '';
     if (styleValue.length > 1) {
-      stringForAI += 'Tell me a story about ' + promptValue + '\nWrite in the following style(s) and/or theme(s): ' + this.state.styleValue + '\nFinish the story with a period (.)';
+      stringForAI += 'Tell me a story about ' + promptValue + '\nWrite in the following style(s) and/or theme(s): ' + this.state.styleValue;
     } else {
-      stringForAI += `Tell me a story about ${promptValue}\nFinish the story with a period (.)`;
+      stringForAI += `Tell me a story about ${promptValue}`;
     }
     const data = { prompt: stringForAI };
     const init = {
