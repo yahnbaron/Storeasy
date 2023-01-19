@@ -33,7 +33,7 @@ export default class Prompt extends React.Component {
       },
       body: JSON.stringify(data)
     };
-    fetch('http://localhost:3000/api/storygenerate', init)
+    fetch('/api/storygenerate', init)
       .then(res => res.json())
       .then(data => {
         this.setState({
