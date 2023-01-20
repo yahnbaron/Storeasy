@@ -81,10 +81,12 @@ export default class Prompt extends React.Component {
                   <p className='full-story'>{this.state.story}</p>
                 </div>
               </div>
-              <div className='row'>
-                <div className='column-full'>
-                  <button onClick={this.saveStory} className='story-save-button'>Save</button>
+              <div className='row space-between'>
+                <div className='column-auto'>
                   <button onClick={this.handleBack} className='return-button'>Start Over</button>
+                </div>
+                <div className='column-auto'>
+                  <button onClick={this.saveStory} className='story-save-button'>Save</button>
                 </div>
               </div>
             </div> }
