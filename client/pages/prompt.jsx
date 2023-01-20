@@ -6,6 +6,8 @@ export default class Prompt extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleBack = this.handleBack.bind(this);
+    this.saveStory = this.saveStory.bind(this);
     this.state = {
       promptValue: '',
       styleValue: '',
@@ -54,6 +56,14 @@ export default class Prompt extends React.Component {
     });
   }
 
+  handleBack() {
+    window.location.hash = '';
+  }
+
+  saveStory() {
+    // const story = this.state.story;
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -66,7 +76,17 @@ export default class Prompt extends React.Component {
           </div>
           {this.state.story &&
             <div className='container'>
-              <p className='full-story'>{this.state.story}</p>
+              <div className='row'>
+                <div className='column-full'>
+                  <p className='full-story'>{this.state.story}</p>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='column-full'>
+                  <button onClick={this.saveStory} className='story-save-button'>Save</button>
+                  <button onClick={this.handleBack} className='return-button'>Start Over</button>
+                </div>
+              </div>
             </div> }
           {!this.state.story &&
             <div className='row center-justify'>
