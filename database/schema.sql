@@ -21,7 +21,7 @@ CREATE TABLE "public"."stories" (
 	"storyId" serial NOT NULL,
 	"title" TEXT NOT NULL,
 	"story" TEXT NOT NULL,
-	"createdAt" TIMESTAMP NOT NULL,
+	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
 	"userId" integer NOT NULL,
 	CONSTRAINT "stories_pk" PRIMARY KEY ("storyId")
 ) WITH (

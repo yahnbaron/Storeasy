@@ -61,7 +61,29 @@ export default class Prompt extends React.Component {
   }
 
   saveStory() {
-    // const story = this.state.story;
+    const init = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: this.props.title,
+        story: this.state.story
+      })
+    };
+    fetch('/api/savestory', init)
+      .then(response => {
+        if (response.ok) {
+          return response;
+        }
+        throw new Error('Failed to save story');
+      })
+      .then(data => {
+        window.location.hash = 'library';
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   render() {
