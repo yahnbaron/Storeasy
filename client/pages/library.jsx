@@ -6,7 +6,7 @@ export default function Library(props) {
     <div>
       <NavBar />
       <div className='container'>
-        <h2>Welcome to The Fucking Library</h2>
+        <h2>Welcome to The Library</h2>
       </div>
     </div>
   );

@@ -194,10 +194,6 @@ textarea:focus {
   line-height: 1.5;
 }
 
-.prompt-submit-button:hover {
-  cursor: pointer;
-}
-
 .prompt-submit-button-disabled {
   border: none;
   background-color: #7fdfff;
@@ -206,4 +202,34 @@ textarea:focus {
   width: 75px;
   border-radius: 4px;
   font-weight: lighter;
+}
+
+.story-save-button {
+  border: none;
+  background-color: #d17196;
+  color: white;
+  height: 30px;
+  width: 75px;
+  border-radius: 4px;
+  font-weight: lighter;
+}
+
+.return-button {
+  border: none;
+  background-color: #8e8e8e;
+  color: white;
+  height: 30px;
+  width: 75px;
+  border-radius: 4px;
+  font-weight: lighter;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.prompt-submit-button:hover,
+.story-save-button:hover,
+.return-button:hover {
+  cursor: pointer;
 }

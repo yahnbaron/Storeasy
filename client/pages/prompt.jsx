@@ -6,6 +6,8 @@ export default class Prompt extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleBack = this.handleBack.bind(this);
+    this.saveStory = this.saveStory.bind(this);
     this.state = {
       promptValue: '',
       styleValue: '',
@@ -54,6 +56,36 @@ export default class Prompt extends React.Component {
     });
   }
 
+  handleBack() {
+    window.location.hash = '';
+  }
+
+  saveStory() {
+    const init = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: this.props.title,
+        story: this.state.story
+      })
+    };
+    fetch('/api/savestory', init)
+      .then(response => {
+        if (response.ok) {
+          return response;
+        }
+        throw new Error('Failed to save story');
+      })
+      .then(data => {
+        window.location.hash = 'library';
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -66,7 +98,19 @@ export default class Prompt extends React.Component {
           </div>
           {this.state.story &&
             <div className='container'>
-              <p className='full-story'>{this.state.story}</p>
+              <div className='row'>
+                <div className='column-full'>
+                  <p className='full-story'>{this.state.story}</p>
+                </div>
+              </div>
+              <div className='row space-between'>
+                <div className='column-auto'>
+                  <button onClick={this.handleBack} className='return-button'>Start Over</button>
+                </div>
+                <div className='column-auto'>
+                  <button onClick={this.saveStory} className='story-save-button'>Save</button>
+                </div>
+              </div>
             </div> }
           {!this.state.story &&
             <div className='row center-justify'>

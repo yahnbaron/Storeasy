@@ -8,6 +8,14 @@ const express = require('express');
 const staticMiddleware = require('./static-middleware');
 const errorMiddleware = require('./error-middleware');
 const bodyParser = require('body-parser');
+const pg = require('pg');
+
+const db = new pg.Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 const app = express();
 
@@ -27,6 +35,27 @@ app.post('/api/storygenerate', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+app.post('/api/savestory', (req, res) => {
+  const { title, story } = req.body;
+  if (!title || !story) {
+    return res.status(400).send({ error: 'title and story are required' });
+  }
+  const sql = `
+    insert into "stories" ("title", "story", "userId")
+    values($1, $2, $3)
+    returning *
+  `;
+  const params = [title, story, 1];
+  db.query(sql, params)
+    .then(result => {
+      res.sendStatus(201);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send({ error: 'Failed to save story to the database' });
+    });
 });
 
 app.use(errorMiddleware);
