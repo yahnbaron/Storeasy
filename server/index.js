@@ -58,6 +58,20 @@ app.post('/api/savestory', (req, res) => {
     });
 });
 
+app.get('/api/getstories', (req, res) => {
+  const sql = `
+        SELECT "storyId", "title" FROM "stories"
+    `;
+  db.query(sql)
+    .then(result => {
+      res.json({ stories: result.rows });
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send({ error: 'Failed to fetch stories' });
+    });
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

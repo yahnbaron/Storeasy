@@ -40,12 +40,24 @@
   flex-basis: auto;
 }
 
+.small-100-large-40 {
+  flex-basis: 100%;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
   }
 
   .col-auto {
+    flex-basis: 40%;
+  }
+
+  .small-100-large-40 {
     flex-basis: 40%;
   }
 }

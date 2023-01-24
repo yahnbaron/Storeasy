@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from '../components/nav-bar';
 
-export default function Library(props) {
+function Library() {
+  const [stories, setStories] = useState([]);
+  useEffect(() => {
+    fetch('/api/getstories')
+      .then(res => res.json())
+      .then(data => {
+        setStories(data.stories);
+      });
+  }, []);
   return (
     <div>
       <NavBar />
       <div className='container'>
-        <h2>Welcome to The Library</h2>
+        <h1 className='story-title' style={{ 'text-decoration': 'none' }}>Library</h1>
+        <div className='row wrap'>
+          {
+          stories.map(story => (
+            <div key={story.storyId} className='small-100-large-40 mapped-story'>
+              <p>{story.title}</p>
+            </div>
+          ))
+        }
+        </div>
       </div>
     </div>
   );
 }
+export default Library;
