@@ -40,7 +40,7 @@
   flex-basis: auto;
 }
 
-.small-100-large-50 {
+.small-100-large-40 {
   flex-basis: 100%;
 }
 
@@ -57,11 +57,7 @@
     flex-basis: 40%;
   }
 
-  .small-100-large-50 {
+  .small-100-large-40 {
     flex-basis: 40%;
   }
-
-  /* .big-row {
-    display: flex;
-  } */
 }

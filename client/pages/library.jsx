@@ -18,7 +18,7 @@ function Library() {
         <div className='row wrap'>
           {
           stories.map(story => (
-            <div key={story.storyId} className='small-100-large-50 mapped-story'>
+            <div key={story.storyId} className='small-100-large-40 mapped-story'>
               <p>{story.title}</p>
             </div>
           ))
