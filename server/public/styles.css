@@ -233,3 +233,21 @@ textarea:focus {
 .return-button:hover {
   cursor: pointer;
 }
+
+.mapped-story {
+  background-color: #d17196;
+  border-radius: 10px;
+  height: 75px;
+  text-align: center;
+  border: 3px solid #7fdfff;
+  margin: 10px;
+  line-height: 70px;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 32px;
+  font-weight: lighter;
+}
+
+.mapped-story:hover {
+  cursor: pointer;
+}
