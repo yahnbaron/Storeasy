@@ -248,6 +248,6 @@ textarea:focus {
   font-weight: lighter;
 }
 
-.mapped-story:hover {
-  cursor: pointer;
+.mapped-title:hover {
+  text-decoration: underline;
 }

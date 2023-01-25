@@ -19,7 +19,8 @@ function Library() {
           {
           stories.map(story => (
             <div key={story.storyId} className='small-100-large-40 mapped-story'>
-              <p>{story.title}</p>
+              <a href={`#story?title=${story.title}&id=${story.storyId}`}
+              className='mapped-title'>{story.title}</a>
             </div>
           ))
         }
