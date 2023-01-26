@@ -3,6 +3,7 @@ import Home from './pages/home';
 import Prompt from './pages/prompt';
 import Library from './pages/library';
 import NotFound from './pages/not-found';
+import Story from './pages/story';
 import parseRoute from './lib/parse-route.js';
 
 export default class App extends React.Component {
@@ -31,6 +32,11 @@ export default class App extends React.Component {
     }
     if (route.path === 'library') {
       return <Library />;
+    }
+    if (route.path === 'story') {
+      const title = route.params.get('title');
+      const id = route.params.get('id');
+      return <Story title={title} id={id} />;
     }
     return <NotFound />;
   }

@@ -27,7 +27,7 @@ app.post('/api/storygenerate', async (req, res) => {
     const response = await openai.createCompletion({
       model: 'text-davinci-003',
       prompt: req.body.prompt,
-      max_tokens: 200,
+      max_tokens: 900,
       temperature: 0.9,
       stream: false
     });
