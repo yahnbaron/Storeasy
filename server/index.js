@@ -72,6 +72,30 @@ app.get('/api/getstories', (req, res) => {
     });
 });
 
+app.get('/api/getstory/:id', (req, res) => {
+  const storyId = req.params.id;
+  if (!storyId) {
+    return res.status(400).send({ error: 'Story ID is required' });
+  }
+  const sql = `
+    SELECT "title", "story" FROM "stories"
+    WHERE "storyId" = $1
+  `;
+  const params = [storyId];
+  db.query(sql, params)
+    .then(result => {
+      if (result.rowCount === 0) {
+        res.status(404).send({ error: 'Story not found' });
+      } else {
+        res.json({ story: result.rows[0] });
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send({ error: 'Failed to fetch story' });
+    });
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {
